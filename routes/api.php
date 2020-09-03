@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/data/duivenspel', function () {
     return LosDataDuivenspel::get()->makeHidden(['id', 'created_at', 'updated_at']);
 });
 
-Route::middleware('auth:api')->get('/device/store', 'DeviceController@store')->name('device.store');
+Route::middleware('auth:api')->post('/device/store', 'DeviceController@store')->name('device.store');
