@@ -17,6 +17,6 @@ class DeviceController extends Controller
             'token' => $request->token,
         ]);
 
-        return response()->json("A new device #{$device->id} with token: {$token} has been added", 200);
+        return response()->json("A new device #{$device->id} with token: {$request->token} has been added", 200);
     }
 }
