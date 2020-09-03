@@ -4,8 +4,8 @@ namespace App\Console\Commands;
 
 use App\LosDataKbdb;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 
 class KBDBCheckWhichLosuurHaveChanged extends Command
 {
@@ -42,6 +42,8 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
     {
         $livedata = $this->argument('livedata');
 
+        $flightsThatWereUpdated = [];
+
         foreach ($livedata as $key => $data) {
             $record = LosDataKbdb::where([
                 ['losplaats', '=', $data[0]],
@@ -57,15 +59,21 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
                 if ($key == 0) {
                     Log::info('$$$ No data yet, adding first data to database $$$');
                 }
-            } elseif (
-                in_array($record->losuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])
-            ) {
+            } elseif (in_array($record->losuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])) {
                 Log::info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
                 Log::info('Extra opmerking: ' . $currentOpmerking);
                 Log::info('De vlucht is gelost om: ' . $currentLiveLosuur);
                 Log::info(' ');
+
+                $flightsThatWereUpdated[] = [
+                    'losplaats' => $currentLosplaats,
+                    'opmerking' => $currentOpmerking,
+                    'losuur' => $currentLiveLosuur,
+                ];
             }
         }
+
+        LosDataKbdb::notifyUsers($flightsThatWereUpdated);
 
         Artisan::call('kbdb:add-latest-data-to-db', ['livedata' => $livedata]);
     }

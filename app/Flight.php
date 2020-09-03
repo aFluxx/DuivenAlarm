@@ -2,10 +2,10 @@
 
 namespace App;
 
-use App\Flight;
+use App\Device;
 use Illuminate\Database\Eloquent\Model;
 
-class Device extends Model
+class Flight extends Model
 {
     /**
      * The attributes that aren't mass assignable.
@@ -15,10 +15,10 @@ class Device extends Model
     protected $guarded = [];
 
     /**
-     * The flights that a device is subscribed to
+     * Get the devices which are subscribed to a flight.
      */
-    public function subscribedFlights()
+    public function devices()
     {
-        return $this->belongsToMany(Flight::class);
+        return $this->hasMany(Device::class);
     }
 }
