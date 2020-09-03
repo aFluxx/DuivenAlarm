@@ -9,7 +9,6 @@ class DeviceController extends Controller
 {
     public function store(Request $request)
     {
-        dd($request->all());
         if (Device::where('token', $request->token)->first()) {
             return response()->json("Device is already saved in the database", 200);
         }
