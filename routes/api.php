@@ -1,5 +1,7 @@
 <?php
 
+use App\LosDataDuivenspel;
+use App\LosDataKbdb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
