@@ -66,6 +66,7 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
                 Log::info(' ');
 
                 $flightsThatWereUpdated[] = [
+                    'losplaats_id' => $record->flight_id,
                     'losplaats' => $currentLosplaats,
                     'opmerking' => $currentOpmerking,
                     'losuur' => $currentLiveLosuur,

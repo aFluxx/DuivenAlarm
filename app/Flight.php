@@ -19,6 +19,6 @@ class Flight extends Model
      */
     public function devices()
     {
-        return $this->hasMany(Device::class);
+        return $this->belongsToMany(Device::class);
     }
 }

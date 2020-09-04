@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Device;
 use App\Flight;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class FlightController extends Controller
 {
