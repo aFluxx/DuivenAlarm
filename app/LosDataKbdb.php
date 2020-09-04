@@ -41,17 +41,16 @@ class LosDataKbdb extends Model
             ];
 
             $body = [
-                "data" => [
+                "notification" => [
                     'title' => 'Nieuwe lossingsinformatie',
                     'subtitle' => '',
-                    'text' => "{$flight['losplaats']} is net gelost om {$flight['losuur']}. \r\n Opmerking: {$flight['opmerking']}",
+                    'body' => "{$flight['losplaats']} is net gelost om {$flight['losuur']}. \n {$flight['opmerking']}",
                     "click_action" => "GENERAL",
                     "badge" => 1,
                     "sound" => "default",
                 ],
-                "to" => "flJOVi9ShYE:APA91bGEzp2dsIv4ITfQ3fnH-mBNImzGnP58pddsmTN0hPERx-VbUjjrCxxrXpSjIgLRs0Pc1V-b0UTGiR7XpxYk7dEBlKnRSLGUqQFUU-Z8figAO45BvqOxu94jkIGMfYzFwV9AkAKq",
+                "to" => "fxc-ULFSM3c:APA91bEHrzayJDDOZHt5uMnNILKBp2KX6REzmSS7IKEUxy-TtARwfSOnsKh5D-uxuVybUABGWQHB6o6a-HJlfLR-CVrYuTk4zco705c3u3bIgCzLT5XAvFDAZ-HGv_MYwR3C_6KcmL0m",
                 "content_available" => true,
-                "priority" => "high",
             ];
 
             $request = new Request('POST', 'https://fcm.googleapis.com/fcm/send', $headers, json_encode($body));

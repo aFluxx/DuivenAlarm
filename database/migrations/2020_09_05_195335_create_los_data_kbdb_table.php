@@ -15,11 +15,14 @@ class CreateLosDataKbdbTable extends Migration
     {
         Schema::create('los_data_kbdb', function (Blueprint $table) {
             $table->id();
-            $table->string('losplaats')->nullable();
+            $table->string('losplaats');
+            $table->unsignedBigInteger('flight_id');
             $table->string('opmerking')->nullable();
             $table->string('losuur')->nullable();
             $table->string('weer')->nullable();
             $table->timestamps();
+
+            $table->foreign('flight_id')->references('id')->on('flights');
         });
     }
 

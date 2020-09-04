@@ -1,0 +1,476 @@
+[
+    {
+        "name": "Aalst"
+    },
+    {
+        "name": "Ablis"
+    },
+    {
+        "name": "Agen"
+    },
+    {
+        "name": "Albi"
+    },
+    {
+        "name": "Angouleme"
+    },
+    {
+        "name": "Arcis S/Aube"
+    },
+    {
+        "name": "Argenton"
+    },
+    {
+        "name": "Arlon"
+    },
+    {
+        "name": "Arras"
+    },
+    {
+        "name": "Aurillac"
+    },
+    {
+        "name": "Auxerre"
+    },
+    {
+        "name": "Barcelona"
+    },
+    {
+        "name": "Beersel"
+    },
+    {
+        "name": "Biarritz"
+    },
+    {
+        "name": "Bierges"
+    },
+    {
+        "name": "Blois"
+    },
+    {
+        "name": "Boom"
+    },
+    {
+        "name": "Bordeaux"
+    },
+    {
+        "name": "Bouillon"
+    },
+    {
+        "name": "Bourges"
+    },
+    {
+        "name": "Boves"
+    },
+    {
+        "name": "Bresny"
+    },
+    {
+        "name": "Briare"
+    },
+    {
+        "name": "Brionne"
+    },
+    {
+        "name": "Brive"
+    },
+    {
+        "name": "Brye"
+    },
+    {
+        "name": "Burdinne/Heron"
+    },
+    {
+        "name": "Cahors"
+    },
+    {
+        "name": "Carcassonne"
+    },
+    {
+        "name": "Castres"
+    },
+    {
+        "name": "Chalons-En-Champagne"
+    },
+    {
+        "name": "Chalon-Sur-Saone"
+    },
+    {
+        "name": "Chantilly"
+    },
+    {
+        "name": "Chartres"
+    },
+    {
+        "name": "Chateaudun"
+    },
+    {
+        "name": "Chateauroux"
+    },
+    {
+        "name": "Chimay"
+    },
+    {
+        "name": "Clermont"
+    },
+    {
+        "name": "Cognelee"
+    },
+    {
+        "name": "Collegien"
+    },
+    {
+        "name": "Cul-Des-Sarts"
+    },
+    {
+        "name": "Dax"
+    },
+    {
+        "name": "Dijon"
+    },
+    {
+        "name": "Dijon-Gray"
+    },
+    {
+        "name": "Diverse"
+    },
+    {
+        "name": "Dizy-Le-Gros"
+    },
+    {
+        "name": "Doornik"
+    },
+    {
+        "name": "Dudelange"
+    },
+    {
+        "name": "Ecouen"
+    },
+    {
+        "name": "Eizeringen"
+    },
+    {
+        "name": "Epehy"
+    },
+    {
+        "name": "Epernay"
+    },
+    {
+        "name": "Fay-Aux-Loges"
+    },
+    {
+        "name": "Fontenay-Le-Comte"
+    },
+    {
+        "name": "Fontenay-Sur-Eure"
+    },
+    {
+        "name": "Gaasbeek"
+    },
+    {
+        "name": "Gedinne"
+    },
+    {
+        "name": "Gien"
+    },
+    {
+        "name": "Gueret"
+    },
+    {
+        "name": "Hannut"
+    },
+    {
+        "name": "Issoudun"
+    },
+    {
+        "name": "Jarnac"
+    },
+    {
+        "name": "Jouy-Le-Chatel"
+    },
+    {
+        "name": "Knokke"
+    },
+    {
+        "name": "La Chatre"
+    },
+    {
+        "name": "La Ferte /S Jouarre"
+    },
+    {
+        "name": "La Ferte St. Aubin"
+    },
+    {
+        "name": "La Souterraine"
+    },
+    {
+        "name": "L'Aigle"
+    },
+    {
+        "name": "Laon"
+    },
+    {
+        "name": "Le Mans"
+    },
+    {
+        "name": "Le Touquet"
+    },
+    {
+        "name": "Les Isnes"
+    },
+    {
+        "name": "Lessines"
+    },
+    {
+        "name": "Libourne"
+    },
+    {
+        "name": "Limoges"
+    },
+    {
+        "name": "Lisieux"
+    },
+    {
+        "name": "Lorris"
+    },
+    {
+        "name": "Luxemburg"
+    },
+    {
+        "name": "Maaseik"
+    },
+    {
+        "name": "Macon"
+    },
+    {
+        "name": "Marche"
+    },
+    {
+        "name": "Marchin"
+    },
+    {
+        "name": "Marseille"
+    },
+    {
+        "name": "Mechelen"
+    },
+    {
+        "name": "Melun-Andrezel"
+    },
+    {
+        "name": "Merchtem"
+    },
+    {
+        "name": "Mettet"
+    },
+    {
+        "name": "Momignies"
+    },
+    {
+        "name": "Momignies"
+    },
+    {
+        "name": "Mont Ventoux"
+    },
+    {
+        "name": "Montargis"
+    },
+    {
+        "name": "Montauban"
+    },
+    {
+        "name": "Montelimar"
+    },
+    {
+        "name": "Montlucon"
+    },
+    {
+        "name": "Montrichard"
+    },
+    {
+        "name": "Moulins"
+    },
+    {
+        "name": "Mouscron"
+    },
+    {
+        "name": "Nanteuil"
+    },
+    {
+        "name": "Narbonne"
+    },
+    {
+        "name": "Nevers"
+    },
+    {
+        "name": "Niergnies"
+    },
+    {
+        "name": "Noyon"
+    },
+    {
+        "name": "Offenburg"
+    },
+    {
+        "name": "Opwijk"
+    },
+    {
+        "name": "Orange"
+    },
+    {
+        "name": "Orleans"
+    },
+    {
+        "name": "Oudenaarde"
+    },
+    {
+        "name": "Pau"
+    },
+    {
+        "name": "Perigueux"
+    },
+    {
+        "name": "Peronne"
+    },
+    {
+        "name": "Perpignan"
+    },
+    {
+        "name": "Pithiviers"
+    },
+    {
+        "name": "Poitiers"
+    },
+    {
+        "name": "Pont Ste.-Maxence"
+    },
+    {
+        "name": "Pontoise"
+    },
+    {
+        "name": "Putte"
+    },
+    {
+        "name": "Puttershoek"
+    },
+    {
+        "name": "Quiévrain"
+    },
+    {
+        "name": "Rastatt"
+    },
+    {
+        "name": "Reims"
+    },
+    {
+        "name": "Rethel"
+    },
+    {
+        "name": "Saarbrucken"
+    },
+    {
+        "name": "San Sebastian"
+    },
+    {
+        "name": "Schaarbeek"
+    },
+    {
+        "name": "Sens"
+    },
+    {
+        "name": "Sermaises"
+    },
+    {
+        "name": "Sezanne"
+    },
+    {
+        "name": "Soissons"
+    },
+    {
+        "name": "Souillac"
+    },
+    {
+        "name": "Sourdun"
+    },
+    {
+        "name": "Soustons"
+    },
+    {
+        "name": "St Soupplets"
+    },
+    {
+        "name": "St. - Junien"
+    },
+    {
+        "name": "St. Vincent"
+    },
+    {
+        "name": "St.Dizier"
+    },
+    {
+        "name": "St.Niklaas"
+    },
+    {
+        "name": "St.-Quentin"
+    },
+    {
+        "name": "Sugny"
+    },
+    {
+        "name": "Tarbes"
+    },
+    {
+        "name": "Tongeren"
+    },
+    {
+        "name": "Toul"
+    },
+    {
+        "name": "Tours"
+    },
+    {
+        "name": "Toury"
+    },
+    {
+        "name": "Trelou S/Marne"
+    },
+    {
+        "name": "Troyes"
+    },
+    {
+        "name": "Tulle"
+    },
+    {
+        "name": "Valence"
+    },
+    {
+        "name": "Verviers - Lambermont"
+    },
+    {
+        "name": "Vervins"
+    },
+    {
+        "name": "Vichy"
+    },
+    {
+        "name": "Vierzon"
+    },
+    {
+        "name": "Villeneuve-Sur-Lot"
+    },
+    {
+        "name": "Vilvoorde"
+    },
+    {
+        "name": "Virton"
+    },
+    {
+        "name": "Vouziers"
+    },
+    {
+        "name": "Waver"
+    },
+    {
+        "name": "Wolvertem"
+    }
+]
