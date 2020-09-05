@@ -49,18 +49,20 @@ class KBDBAddLatestDataToDb extends Command
 
             if (!$currentFlight) {
                 Log::info('Trying to add a flight which we havent saved yet, flight name: ' . $data[0]);
+                $this->info('Trying to add a flight which we havent saved yet, flight name: ' . $data[0]);
                 Log::info(' ');
             } else {
                 LosDataKbdb::create([
-                    'losplaats' => $data[0],
+                    'losplaats' => stripAccents($data[0]),
                     'flight_id' => $currentFlight->id,
-                    'weer' => $data[1],
-                    'opmerking' => $data[2],
+                    'weer' => stripAccents($data[1]),
+                    'opmerking' => stripAccents($data[2]),
                     'losuur' => $data[3],
                 ]);
             }
         }
 
         Log::info('Nieuwe data is overschreven');
+        $this->info('Nieuwe data is overschreven');
     }
 }

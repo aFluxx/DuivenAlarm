@@ -16,4 +16,22 @@ class KBDBTableController extends Controller
     {
         return view('KBDBTable')->with('table', $table);
     }
+
+    public static function findPrevious($id)
+    {
+        if (!$table = KBDBTableGrinder::where('id', '<', $id)->orderBy('id', 'asc')->first()) {
+            return $id;
+        } else {
+            return $table->id;
+        }
+    }
+
+    public static function findNext($id)
+    {
+        if (!$table = KBDBTableGrinder::where('id', '>', $id)->orderBy('id', 'asc')->first()) {
+            return $id;
+        } else {
+            return $table->id;
+        }
+    }
 }

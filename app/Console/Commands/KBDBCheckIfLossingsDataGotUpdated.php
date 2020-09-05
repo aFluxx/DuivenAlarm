@@ -2,12 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\LastChanged;
 use Carbon\Carbon;
 use Goutte\Client;
-use App\LastChanged;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpClient\HttpClient;
 
 class KBDBCheckIfLossingsDataGotUpdated extends Command
 {
@@ -43,6 +44,7 @@ class KBDBCheckIfLossingsDataGotUpdated extends Command
     public function handle()
     {
         $client = new Client();
+        $client->setServerParameter('Content-Type', 'text/html; charset=utf-8');
 
         $crawler = $client->request('GET', 'https://www.kbdb.be/teletekst/lossingsinfo_nl.php');
 
@@ -51,9 +53,11 @@ class KBDBCheckIfLossingsDataGotUpdated extends Command
 
         if (LastChanged::first() && LastChanged::latest('created_at')->where('source', 'kbdb')->first()->last_changed_time == $lastChangedTime) {
             Log::info('No changes');
+            $this->info('No changes');
             Log::info(' ');
         } else {
             Log::info('Info updated, added new time record to table');
+            $this->info('Info updated, added new time record to table');
 
             LastChanged::create([
                 'last_changed_time' => $lastChangedTime,
@@ -61,6 +65,7 @@ class KBDBCheckIfLossingsDataGotUpdated extends Command
             ]);
 
             Log::info('Now crawling kbdb website');
+            $this->info('Now crawling kbdb website');
             Log::info(' ');
             Artisan::call('kbdb:crawl', ['crawler' => $crawler]);
         }

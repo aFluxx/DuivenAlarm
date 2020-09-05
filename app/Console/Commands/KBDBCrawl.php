@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 
 class KBDBCrawl extends Command
 {
@@ -53,6 +53,7 @@ class KBDBCrawl extends Command
         Artisan::call('kbdb:check-welke-losuren-zijn-veranderd', ['livedata' => $table]);
 
         Log::info('KBDB website has been crawled en losuren zijn geupdate');
+        $this->info('KBDB website has been crawled en losuren zijn geupdate');
         Log::info(' ');
     }
 }

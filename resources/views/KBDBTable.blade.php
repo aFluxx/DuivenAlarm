@@ -1,3 +1,9 @@
+<?php
+
+use \App\Http\Controllers\KBDBTableController;
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -14,9 +20,10 @@
 
 <body>
     <h2>{!! $table->lossingsinformatie !!}</h2>
+    <a href="{{ KBDBTableController::findPrevious($table->id) }}">Vorige iteratie tabel</a>
+    <a href="{{ KBDBTableController::findNext($table->id) }}">Volgende iteratie tabel</a>
     <br />
     <table>{!! $table->html !!}</table>
-
 </body>
 
 </html>

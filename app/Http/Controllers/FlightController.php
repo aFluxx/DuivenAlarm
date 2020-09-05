@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Device;
 use App\Flight;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class FlightController extends Controller
 {
@@ -15,7 +16,7 @@ class FlightController extends Controller
         if (count($device->subscribedFlights) > 0) {
             return response()->json($device->subscribedFlights, 200);
         } else {
-            return response()->json('no-subs', 200);
+            return response()->json([], 200);
         }
     }
 

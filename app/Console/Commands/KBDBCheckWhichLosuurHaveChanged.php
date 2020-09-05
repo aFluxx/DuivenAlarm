@@ -58,11 +58,15 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
             if (!$record) {
                 if ($key == 0) {
                     Log::info('$$$ No data yet, adding first data to database $$$');
+                    $this->info('$$$ No data yet, adding first data to database $$$');
                 }
             } elseif (in_array($record->losuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])) {
                 Log::info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
+                $this->info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
                 Log::info('Extra opmerking: ' . $currentOpmerking);
+                $this->info('Extra opmerking: ' . $currentOpmerking);
                 Log::info('De vlucht is gelost om: ' . $currentLiveLosuur);
+                $this->info('De vlucht is gelost om: ' . $currentLiveLosuur);
                 Log::info(' ');
 
                 $flightsThatWereUpdated[] = [
