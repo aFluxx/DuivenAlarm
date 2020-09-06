@@ -19,7 +19,7 @@ use \App\Http\Controllers\KBDBTableController;
 </head>
 
 <body>
-    <h2>{!! $table->lossingsinformatie !!}</h2>
+    <h2><strong>Lossingsinformatie {!! $table->lossingsinformatie !!}</strong></h2>
     <a href="{{ KBDBTableController::findPrevious($table->id) }}">Vorige iteratie tabel</a>
     <a href="{{ KBDBTableController::findNext($table->id) }}">Volgende iteratie tabel</a>
     <br />

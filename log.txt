@@ -1,0 +1,2 @@
+Info updated, added new time record to table
+Now crawling kbdb website

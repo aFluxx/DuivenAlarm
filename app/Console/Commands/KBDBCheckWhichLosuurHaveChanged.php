@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Flight;
 use App\LosDataKbdb;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class KBDBCheckWhichLosuurHaveChanged extends Command
@@ -45,22 +47,15 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
         $flightsThatWereUpdated = [];
 
         foreach ($livedata as $key => $data) {
-            $record = LosDataKbdb::where([
-                ['losplaats', '=', $data[0]],
-                ['weer', '=', $data[1]],
-                ['opmerking', '=', $data[2]],
-            ])->first();
-
             $currentLosplaats = $data[0];
+            $currentWeer = $data[1];
             $currentOpmerking = $data[2];
             $currentLiveLosuur = $data[3];
 
-            if (!$record) {
-                if ($key == 0) {
-                    Log::info('$$$ No data yet, adding first data to database $$$');
-                    $this->info('$$$ No data yet, adding first data to database $$$');
-                }
-            } elseif (in_array($record->losuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])) {
+            if ($key == 0) {
+                Log::info('$$$ No data yet, adding first data to database $$$');
+                $this->info('$$$ No data yet, adding first data to database $$$');
+            } elseif (!in_array($currentLiveLosuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])) {
                 Log::info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
                 $this->info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
                 Log::info('Extra opmerking: ' . $currentOpmerking);
@@ -70,7 +65,7 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
                 Log::info(' ');
 
                 $flightsThatWereUpdated[] = [
-                    'losplaats_id' => $record->flight_id,
+                    'losplaats_id' => Flight::where('name', $currentLosplaats)->orWhereJsonContains('flight_nicenames', $currentLosplaats)->first()->id,
                     'losplaats' => $currentLosplaats,
                     'opmerking' => $currentOpmerking,
                     'losuur' => $currentLiveLosuur,

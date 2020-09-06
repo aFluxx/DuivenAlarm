@@ -46,6 +46,10 @@ class KBDBAddLatestDataToDb extends Command
 
         foreach ($livedata as $data) {
             $currentFlight = Flight::where('name', $data[0])->orWhereJsonContains('flight_nicenames', $data[0])->first();
+            $toSaveLosPlaats = $data[0];
+            $toSaveWeer = $data[1];
+            $toSaveOpmerking = $data[2];
+            $toSaveLosuur = $data[3];
 
             if (!$currentFlight) {
                 Log::info('Trying to add a flight which we havent saved yet, flight name: ' . $data[0]);
@@ -53,11 +57,11 @@ class KBDBAddLatestDataToDb extends Command
                 Log::info(' ');
             } else {
                 LosDataKbdb::create([
-                    'losplaats' => stripAccents($data[0]),
+                    'losplaats' => stripAccents($toSaveLosPlaats),
                     'flight_id' => $currentFlight->id,
-                    'weer' => stripAccents($data[1]),
-                    'opmerking' => stripAccents($data[2]),
-                    'losuur' => $data[3],
+                    'weer' => stripAccents($toSaveWeer),
+                    'opmerking' => stripAccents($toSaveOpmerking),
+                    'losuur' => $toSaveLosuur,
                 ]);
             }
         }

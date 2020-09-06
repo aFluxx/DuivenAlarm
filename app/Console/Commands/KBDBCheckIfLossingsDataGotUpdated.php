@@ -7,8 +7,8 @@ use Carbon\Carbon;
 use Goutte\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Symfony\Component\HttpClient\HttpClient;
 
 class KBDBCheckIfLossingsDataGotUpdated extends Command
 {
@@ -46,7 +46,13 @@ class KBDBCheckIfLossingsDataGotUpdated extends Command
         $client = new Client();
         $client->setServerParameter('Content-Type', 'text/html; charset=utf-8');
 
-        $crawler = $client->request('GET', 'https://www.kbdb.be/teletekst/lossingsinfo_nl.php');
+        // $crawler = $client->request('GET', 'https://www.kbdb.be/teletekst/lossingsinfo_nl.php');
+
+        $counter = DB::table('counter')->first()->count;
+        $crawler = $client->request('GET', 'http://844bb6f84631.ngrok.io/kbdb/table/' . $counter);
+        $counter++;
+        DB::table('counter')->truncate();
+        DB::table('counter')->insert(['count' => $counter]);
 
         $lastChangedData = explode(" ", $crawler->filter('strong:first-of-type')->eq(0)->text());
         $lastChangedTime = Carbon::parse(str_replace('/', '-', $lastChangedData[1]) . ' ' . $lastChangedData[2]);

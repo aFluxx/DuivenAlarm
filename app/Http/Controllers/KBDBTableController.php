@@ -19,7 +19,7 @@ class KBDBTableController extends Controller
 
     public static function findPrevious($id)
     {
-        if (!$table = KBDBTableGrinder::where('id', '<', $id)->orderBy('id', 'asc')->first()) {
+        if (!$table = KBDBTableGrinder::where('id', '<', $id)->orderBy('id', 'desc')->first()) {
             return $id;
         } else {
             return $table->id;

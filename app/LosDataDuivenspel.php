@@ -22,11 +22,11 @@ class LosDataDuivenspel extends Model
 
     public function setLosplaatsAttribute($value)
     {
-        $this->attributes['losplaats'] = ucfirst(strtolower($value));
+        $this->attributes['losplaats'] = ucwords(strtolower($value));
     }
 
     public function setOpmerkingAttribute($value)
     {
-        $this->attributes['opmerking'] = ucfirst(strtolower($value));
+        $this->attributes['opmerking'] = ucwords(strtolower($value));
     }
 }
