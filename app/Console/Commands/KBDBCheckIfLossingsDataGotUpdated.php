@@ -49,7 +49,10 @@ class KBDBCheckIfLossingsDataGotUpdated extends Command
         $crawler = $client->request('GET', 'https://www.kbdb.be/teletekst/lossingsinfo_nl.php');
 
         // $counter = DB::table('counter')->first()->count;
-        // $crawler = $client->request('GET', 'http://844bb6f84631.ngrok.io/kbdb/table/' . $counter);
+        // $crawler = $client->request('GET', 'http://fc37e6992f8d.ngrok.io/kbdb/table/' . $counter);
+        // if ($counter == 1585) {
+        //     $counter = 1621;
+        // }
         // $counter++;
         // DB::table('counter')->truncate();
         // DB::table('counter')->insert(['count' => $counter]);

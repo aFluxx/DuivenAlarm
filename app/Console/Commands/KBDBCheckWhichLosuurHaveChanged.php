@@ -55,7 +55,7 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
             if ($key == 0) {
                 Log::info('$$$ No data yet, adding first data to database $$$');
                 $this->info('$$$ No data yet, adding first data to database $$$');
-            } elseif (!in_array($currentLiveLosuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])) {
+            } elseif ($this->shouldUserBeNotified($currentLosplaats, $currentOpmerking, $currentLiveLosuur)) {
                 Log::info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
                 $this->info('Losuur is veranderd voor vlucht: ' . $currentLosplaats);
                 Log::info('Extra opmerking: ' . $currentOpmerking);
@@ -76,5 +76,20 @@ class KBDBCheckWhichLosuurHaveChanged extends Command
         LosDataKbdb::notifyUsers($flightsThatWereUpdated);
 
         Artisan::call('kbdb:add-latest-data-to-db', ['livedata' => $livedata]);
+    }
+
+    public function shouldUserBeNotified($losplaats, $opmerking, $liveLosuur)
+    {
+        if (in_array($liveLosuur, ['geen info', 'geen', 'Geen info'])) {
+            return false;
+        }
+
+        if (!in_array($liveLosuur, ['wachten', 'attendre', 'Wachten', 'Attendre'])) {
+            if (LosDataKbdb::where(['losplaats' => $losplaats, 'opmerking' => $opmerking, 'losuur' => $liveLosuur])->first()) {
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
 }
