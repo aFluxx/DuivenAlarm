@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('kbdb:check-timestamp')->everyMinute();
-        $schedule->command('kbdb:grind')->everyTenMinutes();
+        // $schedule->command('kbdb:grind')->everyTenMinutes();
     }
 
     /**
