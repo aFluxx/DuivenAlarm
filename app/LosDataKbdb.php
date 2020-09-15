@@ -48,7 +48,7 @@ class LosDataKbdb extends Model
 
             foreach ($devices as $device) {
                 $headers = [
-                    'Authorization' => 'key=AAAAmii6OEI:APA91bGtqwXxmUCaryyXT-eVOREBzLhQ7FlLGoGXFfl2TljmgTCilqck8IzCpq1A-rrvS4fT-f8_wbatC5g1UgyNMYGX8yw-a__-GDaEn8NnWA0urJj32egouFSGv5OxoByRL-a2bAsI',
+                    'Authorization' => config('firebase.token'),
                     'Content-Type' => 'application/json',
                 ];
 
