@@ -1,0 +1,6 @@
+$user = new App\User();
+$user->password = Hash::make('GADaGCmn387Q3ZYf');
+$user->api_token = Str::random(60);
+$user->email = 'debelserarne@hotmail.com';
+$user->name = 'De Belser Arne';
+$user->save();
